@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: intelligentphp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: intelligentphp
+  template:
+    metadata:
+      labels:
+        app: intelligentphp 
+    spec:
+      containers:
+        - name: intelligentphp 
+          image: iepython.azurecr.io/intelligentphp
+          ports:
+          - containerPort: 8080
